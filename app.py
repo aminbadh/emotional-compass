@@ -6,19 +6,19 @@ import altair as alt
 
 import joblib
 
-pipe_lr = joblib.load(open("model/emotional_compass.pkl", "rb"))
+model = joblib.load(open("model/emotional_compass.pkl", "rb"))
 
 emotions_emoji_dict = {"anger": "😠", "disgust": "🤮", "fear": "😨😱", "happy": "🤗", "joy": "😂", "neutral": "😐", "sad": "😔",
                        "sadness": "😔", "shame": "😳", "surprise": "😮"}
 
 
 def predict_emotions(docx):
-    results = pipe_lr.predict([docx])
+    results = model.predict([docx])
     return results[0]
 
 
 def get_prediction_proba(docx):
-    results = pipe_lr.predict_proba([docx])
+    results = model.predict_proba([docx])
     return results
 
 
@@ -47,9 +47,7 @@ def main():
 
         with col2:
             st.success("Prediction Probability")
-            #st.write(probability)
-            proba_df = pd.DataFrame(probability, columns=pipe_lr.classes_)
-            #st.write(proba_df.T)
+            proba_df = pd.DataFrame(probability, columns=model.classes_)
             proba_df_clean = proba_df.T.reset_index()
             proba_df_clean.columns = ["emotions", "probability"]
 
