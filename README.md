@@ -1,0 +1,3 @@
+# Emotional Compass: Navigate Your Feelings
+
+Emotional Compass is a text-based emotion detection model developed using Python. As part of the Data Science and Machine Learning training at Orange Digital Center, we explored various machine learning algorithms to identify emotions expressed in written text. To make this model accessible and user-friendly, we built a web application that allows users to input their thoughts and receive immediate emotional analysis.
