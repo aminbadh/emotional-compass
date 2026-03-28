@@ -8,8 +8,8 @@ import joblib
 
 model = joblib.load(open("model/emotional_compass.pkl", "rb"))
 
-emotions_emoji_dict = {"anger": "😠", "disgust": "🤮", "fear": "😨😱", "happy": "🤗", "joy": "😂", "neutral": "😐", "sad": "😔",
-                       "sadness": "😔", "shame": "😳", "surprise": "😮"}
+emotions_emoji_dict = {"anger": "😠", "disgust": "🤮", "fear": "😨😱", "happy": "🤗", "joy": "😂", "neutral": "😐", "sad": "😔", 
+                    "sadness": "😔", "shame": "😳", "surprise": "😮", "love": "😍"}
 
 
 def predict_emotions(docx):
